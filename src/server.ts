@@ -59,14 +59,14 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
                             }
                         )
                     )
-                )
+                );
             } else {
                 next();
             }
         },
         async (req: Request, res: Response, next: NextFunction) => {
             try {
-                let absolutePath: string = await filterImageFromURL(req.query.image_url);
+                let absolutePath: string = await filterImageFromURL(req.query.image_url) as string;
                 res.sendFile(absolutePath, {}, async (err) => {
                     if (err) {
                         next(err);
@@ -75,8 +75,9 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
                         return res.status(200);
                     }
                 });
+
             } catch (e) {
-                next(e)
+                return next(e);
             }
         }
     );
