@@ -8,6 +8,21 @@ A basic Ionic client web application which consumes the RestAPI Backend. [Covere
 2. [The RestAPI Backend](https://github.com/udacity/cloud-developer/tree/master/course-02/exercises/udacity-c2-restapi), a Node-Express server which can be deployed to a cloud service. [Covered in the course]
 3. [The Image Filtering Microservice](https://github.com/udacity/cloud-developer/tree/master/course-02/project/image-filter-starter-code), the final project for the course. It is a Node-Express application which runs a simple script to process images. [Your assignment]
 
+# GitHub data
+
+Master/prod branch: https://github.com/jungleBadger/image-processing-api-udacity 
+
+Development branch: https://github.com/jungleBadger/image-processing-api-udacity/tree/dev
+
+# Running EB URL:
+
+Base URL: http://image-filter-starter-code-dev2.sa-east-1.elasticbeanstalk.com
+
+Please note that the [suggested image URL](https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg) fails to load due to an unknown reason. I debugged a lot, and found [this Github issue thread](https://github.com/oliver-moran/jimp/issues/643) explaining more about this arbitraty problem.
+
+[Test endpoint](http://image-filter-starter-code-dev2.sa-east-1.elasticbeanstalk.com/filteredimage?image_url=https://s2.glbimg.com/YTk3VVsha2w_qk1B3Cb-jd348To=/1080x608/top/smart/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/U/k/Wo7MxQRW2KXypGiWc2qw/google-doodl.jpg)
+
+
 ## Tasks
 
 ### Setup Node Environment
