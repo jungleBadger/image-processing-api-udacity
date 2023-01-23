@@ -16,11 +16,11 @@ Development branch: https://github.com/jungleBadger/image-processing-api-udacity
 
 # Running EB URL:
 
-Base URL: http://image-filter-starter-code-dev2.sa-east-1.elasticbeanstalk.com
+Base URL: http://image-filter-starter-code-dev2222222.us-east-1.elasticbeanstalk.com/
 
 Please note that the [suggested image URL](https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg) fails to load due to an unknown reason. I debugged a lot, and found [this Github issue thread](https://github.com/oliver-moran/jimp/issues/643) explaining more about this arbitraty problem.
 
-[Test endpoint](http://image-filter-starter-code-dev2.sa-east-1.elasticbeanstalk.com/filteredimage?image_url=https://s2.glbimg.com/YTk3VVsha2w_qk1B3Cb-jd348To=/1080x608/top/smart/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/U/k/Wo7MxQRW2KXypGiWc2qw/google-doodl.jpg)
+[Test endpoint](http://image-filter-starter-code-dev2222222.us-east-1.elasticbeanstalk.com//filteredimage?image_url=https://s2.glbimg.com/YTk3VVsha2w_qk1B3Cb-jd348To=/1080x608/top/smart/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/U/k/Wo7MxQRW2KXypGiWc2qw/google-doodl.jpg)
 
 
 ## Tasks
