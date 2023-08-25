@@ -10,8 +10,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf www/ || true",
-    "build": "npm run clean && tsc && cp package.json www/package.json && mkdir www/tmp/ && cd www && zip -r Archive.zip . && cd ..",
-    "dev": "ts-node-dev ./src/server.ts",
+    "build": "npm run clean && mkdir www && cp -r src/* www && cp package.json www/package.json && mkdir www/tmp/ && cd www && zip -r Archive.zip . && cd ..",
+    "dev": "ts-node-dev src/server.js",
     "start": "npm run build && node www/server.js"
   },
   "repository": {

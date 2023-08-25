@@ -1,31 +1,16 @@
-import express from 'express';
-import {Application, Request, Response, NextFunction, Errback} from "express";
+const express = require("express");
+const bodyParser = require("body-parser");
 
-import bodyParser from 'body-parser';
-import {filterImageFromURL, deleteLocalFiles} from './util/util';
+
+const {filterImageFromURL, deleteLocalFiles} = require("./util/util");
 
 (async () => {
 
-    const app: Application = express();
+    const app = express();
 
-    const port: number = Number(process.env.PORT) || 8082;
+    const port = Number(process.env.PORT) || 8082;
 
     app.use(bodyParser.json());
-
-    // @TODO1 IMPLEMENT A RESTFUL ENDPOINT
-    // GET /filteredimage?image_url={{URL}}
-    // endpoint to filter an image from a public url.
-    // IT SHOULD
-    //    1
-    //    1. validate the image_url query
-    //    2. call filterImageFromURL(image_url) to filter the image
-    //    3. send the resulting file in the response
-    //    4. deletes any files on the server on finish of the response
-    // QUERY PARAMATERS
-    //    image_url: URL of a publicly accessible image
-    // RETURNS
-    //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
-
 
     /**
      * @swagger
@@ -48,7 +33,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
      *         description: Internal server error.
      */
     app.get("/filteredimage",
-        (req: Request, res: Response, next: NextFunction) => {
+        (req, res, next) => {
             if (!req.query.image_url) {
                 next(
                     new Error(
@@ -64,9 +49,9 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
                 next();
             }
         },
-        async (req: Request, res: Response, next: NextFunction) => {
+        async (req, res, next) => {
             try {
-                let absolutePath: string = await filterImageFromURL(req.query.image_url) as string;
+                let absolutePath = await filterImageFromURL(req.query.image_url);
                 res.sendFile(absolutePath, {}, async (err) => {
                     if (err) {
                         next(err);
@@ -88,7 +73,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
         res.send("try GET /filteredimage?image_url={{}}")
     } );
 
-    app.use((err: any, req: Request, res: Response, next: NextFunction) => {
+    app.use((err, req, res, next) => {
         try {
             if (Object.prototype.hasOwnProperty.call(err, "status")) {
                 return res.status(err.status || 500).send(err.message || err);
