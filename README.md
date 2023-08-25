@@ -16,7 +16,7 @@ Development branch: https://github.com/jungleBadger/image-processing-api-udacity
 
 # Running EB URL:
 
-Base URL: http://image-processing-api-jng-dev.us-east-1.elasticbeanstalk.com/
+Base URL: http://image-processing-api-udacity-dev.us-east-1.elasticbeanstalk.com/
 
 Please note that the [suggested image URL](https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg) fails to load due to an unknown reason. I debugged a lot, and found [this Github issue thread](https://github.com/oliver-moran/jimp/issues/643) explaining more about this arbitraty problem.
 
